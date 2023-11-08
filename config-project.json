@@ -1,0 +1,21 @@
+{
+  "name" : "pdf-testing",
+  "variableSets" : {
+    "default" : { }
+  },
+  "variableXpaths" : {
+    "/adapter/channel-list/channel[unique-id=\"pdf-processing\"]/workflow-list/standard-workflow[unique-id=\"create-text\"]/service-collection/services/fop-transform-service[unique-id=\"create-pdf\"]/base-uri" : "${fop-base-uri}",
+    "/adapter/channel-list/channel[unique-id=\"pdf-processing\"]/workflow-list/standard-workflow[unique-id=\"create-html\"]/service-collection/services/fop-transform-service[unique-id=\"create-pdf\"]/base-uri" : "${fop-base-uri}",
+    "/adapter/channel-list/channel[unique-id=\"pdf-processing\"]/workflow-list/standard-workflow[unique-id=\"create-pdf\"]/service-collection/services/fop-transform-service[unique-id=\"create-pdf\"]/base-uri" : "${fop-base-uri}"
+  },
+  "uidInXincludeCompntListFileName" : false,
+  "xincludeXpaths" : { },
+  "additionalFiles" : {
+    "jetty.xml" : "jetty.xml",
+    "webdefault.xml" : "webdefault.xml",
+    "bootstrap.properties" : "bootstrap.properties",
+    "log4j2.xml" : "log4j2.xml"
+  },
+  "optionalComponentsInUse" : [ "com.adaptris:interlok-pdf:5.0-SNAPSHOT" ],
+  "structured" : true
+}

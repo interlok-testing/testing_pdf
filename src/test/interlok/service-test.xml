@@ -1,0 +1,37 @@
+<service-test>
+  <unique-id>pdf-testing</unique-id>
+  <test-client class="embedded-jmx-test-client"/>
+  <helpers/>
+  <test-list>
+    <unique-id>pdf-processing</unique-id>
+    <test>
+      <unique-id>create-pdf@create-pdf</unique-id>
+      <test-case>
+        <unique-id>test-create-pdf</unique-id>
+        <input-message-provider>
+          <metadata-provider class="empty-metadata-provider"/>
+          <payload-provider class="file-payload-provider">
+            <file>file:///${service.tester.working.directory}/src/test/resources/example-input.fo</file>
+          </payload-provider>
+        </input-message-provider>
+        <assertions>
+          <assert-payload-contains>
+            <payload><![CDATA[%PDF-1.4]]></payload>
+          </assert-payload-contains>
+        </assertions>
+      </test-case>
+      <service-to-test>
+        <source class="file-source">
+          <file>file:///${service.tester.working.directory}/src/main/interlok/config/adapter.xml</file>
+        </source>
+        <preprocessors>
+          <service-unique-id-preprocessor>
+            <channel>pdf-processing</channel>
+            <workflow>create-pdf</workflow>
+            <service>create-pdf</service>
+          </service-unique-id-preprocessor>
+        </preprocessors>
+      </service-to-test>
+    </test>
+  </test-list>
+</service-test>

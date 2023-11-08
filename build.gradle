@@ -1,0 +1,29 @@
+plugins {
+  // https://github.com/nemerosa/versioning
+  id 'net.nemerosa.versioning' version '2.14.0'
+}
+
+ext {
+  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v5/build.gradle"
+  interlokVersion = '5.0-SNAPSHOT'
+  // Include the WAR file since by default it is excluded.
+  includeWar='true'
+}
+
+allprojects {
+  apply from: "${interlokParentGradle}"
+  // specify the version of the configuration.
+  version=versioning.info.full
+}
+
+
+dependencies {
+  interlokRuntime ("com.adaptris:interlok-pdf:$interlokVersion") { changing=true }
+  interlokRuntime ("com.adaptris:interlok-service-tester:$interlokVersion") { changing=true }
+  
+  interlokTestRuntime ("com.adaptris:interlok-service-tester:$interlokVersion") { changing=true }
+
+  interlokJavadocs group: "com.adaptris", name: "interlok-pdf", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false
+  interlokJavadocs group: "com.adaptris", name: "interlok-service-tester", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false
+
+}

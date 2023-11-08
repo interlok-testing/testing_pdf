@@ -1,0 +1,22 @@
+name: Gradle Build
+
+on:
+  push:
+    branches: # Support master and main default branches
+    - master
+    - main
+  schedule:
+    - cron: 0 3 * * * # Daily 3 a.m.
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  gradle-publish:
+    name: Gradle Publish
+    uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check-test-project.yml@main
+    with:
+      disable-dependency-check: true
+    secrets:
+      NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
+      TEAMS_IDN_WH_URL: ${{ secrets.TEAMS_IDN_WH_URL }}
