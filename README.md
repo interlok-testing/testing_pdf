@@ -1,5 +1,8 @@
 # PDF testing
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_pdf.svg)](https://github.com/interlok-testing/testing_pdf/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_pdf/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_pdf/actions/workflows/gradle-build.yml)
+
 Project tests interlok-pdf features
 
 ## What it does
