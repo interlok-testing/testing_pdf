@@ -67,7 +67,6 @@
             </filename-creator>
             <base-directory-url>file://localhost/./messages/create-pdf-data-out/</base-directory-url>
           </producer>
-          <produce-exception-handler class="null-produce-exception-handler"/>
           <unique-id>create-pdf</unique-id>
         </standard-workflow>
         <standard-workflow>
@@ -102,7 +101,6 @@
             </filename-creator>
             <base-directory-url>file://localhost/./messages/create-html-data-out/</base-directory-url>
           </producer>
-          <produce-exception-handler class="null-produce-exception-handler"/>
           <unique-id>create-html</unique-id>
         </standard-workflow>
         <standard-workflow>
@@ -137,7 +135,6 @@
             </filename-creator>
             <base-directory-url>file://localhost/./messages/create-text-data-out/</base-directory-url>
           </producer>
-          <produce-exception-handler class="null-produce-exception-handler"/>
           <unique-id>create-text</unique-id>
         </standard-workflow>
       </workflow-list>
