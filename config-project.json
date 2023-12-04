@@ -11,8 +11,6 @@
   "uidInXincludeCompntListFileName" : false,
   "xincludeXpaths" : { },
   "additionalFiles" : {
-    "jetty.xml" : "jetty.xml",
-    "webdefault.xml" : "webdefault.xml",
     "bootstrap.properties" : "bootstrap.properties",
     "log4j2.xml" : "log4j2.xml"
   },
